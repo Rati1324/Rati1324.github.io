@@ -6,16 +6,16 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 ### Markdown
 <a href="https://raw.githack.com/Rati1324/HTML_Homework/master/Davaleba_1/2.html">link</a>
-
+<ul>
+  <li><a href="https://raw.githack.com/Rati1324/HTML_Homework/master/Davaleba_1/2.html">link</a></li>
+</ul>
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
 Syntax highlighted code block
 
 <a href="https://raw.githack.com/Rati1324/HTML_Homework/master/Davaleba_1/2.html">link</a>
-<ul>
-  <li><a href="https://raw.githack.com/Rati1324/HTML_Homework/master/Davaleba_1/2.html">link</a></li>
-</ul>
+
   # Header 1
 ## Header 2
 ### Header 3
