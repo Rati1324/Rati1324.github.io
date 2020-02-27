@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradients</title>
+    <style>
+        div{
+            margin-top: 170px;
+            margin-left: 160px;
+            margin-right: 100px    
+        }
+        p{
+            width:260px;
+            height:150px;  
+            float:left;
+            padding-left: 20px;
+            margin-right: 20px;
+            margin-left:20px;   
+        }
+        .gradient1{
+            background-image: linear-gradient(to right,red,green,blue);              
+        }
+        .gradient2{
+            background-image: linear-gradient(blue,green,red);  
+        }
+        .gradient3{
+            background-image: linear-gradient(to bottom right,blue,green,red);        
+        }
+        .gradient4{
+            background-image: linear-gradient(to bottom left,rgb(245, 0, 0) 30%,green,blue);
+        }
+        .gradient5{
+            background-image: radial-gradient(red,green,blue);      
+        }
+        .gradient6{
+            background-image: radial-gradient(red 45%,green 5%,blue 60%);
+        }
+        .gradient7{
+            background-image: repeating-radial-gradient(red 10%,green 40%,blue 50%);
+        }
+        .gradient8{
+            background-image: radial-gradient(red 20%,green 20%, blue 30%);
+        }
+    </style>
+</head>
+<body>
+    <div class="div1" >
+        <h1 align="center">Gradients</h1>
+        <p class="gradient1"></p>
+        <p class="gradient2"></p>
+        <p class="gradient3"></p>
+        <p class="gradient4"></p>
+      
+    </div>
+    <br>
+    <div class="div2">
+        <p class="gradient5"></p>
+        <p class="gradient6"></p>     
+        <p class="gradient7"></p>
+        <p class="gradient8"></p>
+    </div>          
+    
+</body>
+</html>
