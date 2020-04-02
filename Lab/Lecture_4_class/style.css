@@ -1,0 +1,14 @@
+.table{
+    width:1000px;
+    height:600px;
+    border: solid 20px green;
+    margin:auto;
+    /* border-collapse:collapse; */
+}
+.table td{
+    border:solid 3px blue;
+}
+.table th{
+    height:100px;
+    
+}
