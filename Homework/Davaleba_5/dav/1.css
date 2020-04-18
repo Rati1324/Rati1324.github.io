@@ -59,7 +59,7 @@
 .midbox1{
     border:1px solid;
     width:61px;
-    height:61px;
+    height:68px;
     position:absolute;
     bottom:112px;
     left:133px;
@@ -68,7 +68,7 @@
 .midbox2{
     border:1px solid;
     width:61px;
-    height:61px;
+    height:68px;
     position:absolute;
     bottom:112px;
     left:201px;
@@ -77,9 +77,9 @@
 .midbox3{
     border:1px solid;
     width:61px;
-    height:60px;
+    height:68px;
     position:absolute;
-    bottom:195px;
+    bottom:187px;
     left:201px;
     background-color:blue;
 
@@ -87,9 +87,15 @@
 .midbox4{
     border:1px solid;
     width:61px;
-    height:60px;
+    height:68px;
     position:absolute;
-    bottom:195px;
+    bottom:187px;
     left:133px;
     background-color:red
+}
+hr{
+    position:absolute;
+    width:898px;
+    left:350px;
+    bottom:165px
 }
