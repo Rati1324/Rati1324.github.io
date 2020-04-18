@@ -49,3 +49,9 @@
     top:60px;
     right:600px;
 }
+.link{
+    position:absolute;
+    text-align: center;
+    top:720px;
+    left:800px;
+}
