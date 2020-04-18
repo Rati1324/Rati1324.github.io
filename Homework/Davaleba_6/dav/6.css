@@ -1,6 +1,7 @@
 table{
     border-spacing: 0;
     border:1px solid;
+    margin:auto;
 }
 table thead td{
     border:1px solid;
@@ -23,9 +24,10 @@ tfoot td{
 .div1{
     border:1px solid;
     height:70px;
-    width:1227px;
+    width:1268px;
     text-align:center;
-    background-color:skyblue
+    background-color:skyblue;
+    margin:auto;
 }
 .link{
     text-align: center;
