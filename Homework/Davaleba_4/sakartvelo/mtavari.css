@@ -3,24 +3,26 @@ body{
 }
 table{
     border:1px solid;
-    height:740px;
-    width:1050px;
+    /* height:740px; */
+    width:10px;
     margin:auto;
     border-spacing:0px;
 }
 thead td{
     border:1px solid;
+    height:70px;
 }
 tbody td{
     border:1px solid;
     height:5px;
+    /* width:2px */
 }
 tfoot td{
     border:1px solid;
     height:20px
 }
 .div1{
-    margin-bottom:220px;
+    margin-bottom:240px;
 }
 .grad1{
     background-image: linear-gradient(to right,white,blue);
