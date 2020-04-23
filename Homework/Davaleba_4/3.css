@@ -1,0 +1,17 @@
+table{
+    border:1px solid;
+    margin:auto;
+}
+table td{
+    border:1px solid;
+    height:40px;
+    width:50px
+}
+thead{
+    border:1px solid;
+}
+thead td{
+    border:1px solid;
+    height:56px;
+    width:120px
+}
