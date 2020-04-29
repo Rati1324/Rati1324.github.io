@@ -36,7 +36,7 @@ header{
     margin-right:120px
 }
 .nav1 a{
-    background-color:rgba(172, 159, 159, 0.746);
+    background-image:linear-gradient(rgba(255, 255, 255, 0.623),rgba(97, 92, 92, 0.767));
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     text-align: center;
@@ -49,8 +49,7 @@ header{
     padding-top:10px
 }
 .nav1 a:hover{
-    background-color: yellowgreen;
-
+    background-color: rgb(150, 240, 33);
 }
 
 /* pix */
