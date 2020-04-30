@@ -159,10 +159,14 @@ table thead tr{
     margin-left:150px;
     width:300px
 }
+.labelformarea{
+    position:absolute;
+    /* top:100px */
+}
 .formarea{
     height:150px;
-    width:300px;
-    margin-left:162px;
+    width:313px;
+    margin-left:312px;
     margin-top:10px
 }
 .chkbx{
