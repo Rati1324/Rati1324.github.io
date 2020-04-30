@@ -68,8 +68,7 @@ header{
                                     /* SIDEBAR */
 .sidebar{
     position:absolute;
-    right:274px;
-    margin-top:20px
+    right:274px
 }
 .news{
     border:1px solid;
@@ -125,6 +124,9 @@ header{
 
 ul{
     padding-left:20px
+}
+ul li{
+    line-height:30px
 }
 
 

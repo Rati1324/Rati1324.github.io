@@ -2,10 +2,7 @@ body{
     margin:0;
 }
 .content{
-    margin-top:20px;
     margin-left:264px;
-    /* position:relative    ;  */
-    /* bottom:300px */
 }
 header{
     width:100%;
@@ -117,6 +114,7 @@ header{
                                     /* TEXT */
 
 .text1{
+    margin-top:20px;
     width:780px;
 }
                             /* links */

@@ -2,10 +2,7 @@ body{
     margin:0;
 }
 .content{
-    margin-top:20px;
     margin-left:264px;
-    /* position:relative    ;  */
-    /* bottom:300px */
 }
 header{
     width:100%;
@@ -68,9 +65,7 @@ header{
                                     /* SIDEBAR */
 .sidebar{
     position:absolute;
-    right:270px;
-    top:240px
-    /* margin-top:20px */
+    right:274px
 }
 .news{
     border:1px solid;
@@ -119,12 +114,16 @@ header{
                                     /* TEXT */
 
 .text1{
-    width:780px;
+    margin-top:20px;
+    width:700px;
 }
                             /* links */
 
 ul{
     padding-left:20px
+}
+ul li{
+    line-height:30px
 }
 
 
