@@ -1,0 +1,52 @@
+@keyframes anim{
+    0%{
+        top:350px;
+        left:0px
+    }
+    10%{
+        top:200px;
+        left:0px;
+    }
+    20%{
+        top:80px;
+        left:120px
+    }
+    30%{
+        top:200px;
+        left:240px;
+    }
+    40%{
+        left:240px;
+        top:350px;
+    }
+    50%{
+        top:200px;
+        left:20px;
+    }
+    60%{
+        top:200px;
+        left:250px;
+    }
+    80%{
+        top:350px;
+        left:0px;
+    }
+    100%{
+        top:350px;
+        left:240px
+    }
+
+}
+.circle{
+    margin:auto;
+    position:relative;
+    height:20px;
+    width:20px;
+    border:1px solid;
+    border-radius:30px;
+    animation-name:anim;
+    animation-duration:6s;
+    background-color:red;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
