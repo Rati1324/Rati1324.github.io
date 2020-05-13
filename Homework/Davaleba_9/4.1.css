@@ -4,11 +4,11 @@ body{
 }
 .container{
     position:relative;
-    min-height: 110vh;
+    min-height: 45em;
     margin:auto;
     width:900px;
     background-color:lightgray;
-    border:1px solid;;
+    border:1px solid;
     border-left:none;
 
 }
@@ -44,8 +44,8 @@ body{
     float:left;
     border:1px solid;
     border-top:none;
+    height:35em;
     border-bottom:none;
-    height:523px;
     width:160px;
     /* padding-top:7px */
 }
@@ -65,8 +65,7 @@ body{
 }
 .img1{
     width:140px;
-    height:310px;
-    
+    height:20em; 
 }
 
 .page{
