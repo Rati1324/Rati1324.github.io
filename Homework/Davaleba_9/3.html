@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <div class="from1">
+                <input class="input1" placeholder="Name" type="text">
+                <input class="input1" placeholder="Email" style="margin-top:10px"type="text">
+                <input class="input1" style="margin-top: 10px" type="text" placeholder="Phone">
+                <textarea class="txt" style="font-size:15px;margin-top:12px" placeholder="special notes, concerns, or requirements"></textarea>
+            </div>
+
+            <div class="from2">
+                <div><b>What is the best way to reach you</b></div>
+                <div style="margin-left:-3px">
+                    <br>
+                    <input type="radio" id='a' name='c' value='1'>
+                    <label for="a">Phone</label>
+                    <br>
+                    <input type="radio" name='c' value='2' id='b'>
+                    <label for="b">Email</label>
+                </div><br>
+                <div><b>Days of the week you are available for <br> an appointment</b></div>
+                
+                <div class="rectangles">
+                    <br>
+                    <label class="checkbox1">Monday
+                        <input type="checkbox" name='d' value="1" id='a1'>
+                    </label>
+                    <br>
+                    <label class ="checkbox1">Tuesday
+                        <input type="checkbox" name='d' value="2">
+                    </label>
+                    <br>
+                    <label class="checkbox1">Wednesday
+                        <input type="checkbox" name='d' value="3">    
+                    </label>
+                    <br>
+                    <label class="checkbox1">Thursday
+                        <input type="checkbox" name='d' value="4">
+                    </label>
+                </div>
+                <br>
+                <div><b>Best time of the day for your appointment:</b></div>
+                <br>
+
+                <div class="rectangles">
+                    <label class="checkbox">Morning
+                        <input type="radio" name='d'>
+                        <span class="rec" style="bottom:25px"><span class="smallrec"></span></span>
+                    </label>
+                    <br>
+                    <label class="checkbox">Afternoon
+                        <input type="radio" name='d'>
+                        <span class="rec"><span class="smallrec"></span></span>
+                    </label>
+                </div>
+            </div>
+            <hr>
+            <button class="request" type="submit"><span style="font-size:18px;color:white">Request my appointment</span></button>
+        </form>
+        
+        
+    </div>
+    
+</body>
+</html>

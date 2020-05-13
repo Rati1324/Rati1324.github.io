@@ -1,0 +1,24 @@
+.container{
+    height:400px;
+    width:450px;
+    margin:auto;
+    text-align:center;
+    padding-top:20px;
+    border:2px solid;
+    background-color: lightgrey;
+}
+form input{
+    margin-top:30px;
+    padding-left:10px;
+    height:35px;
+    border:1px solid lightgrey;
+    border-radius:7px;
+}
+form button{
+    margin-top:30px;
+    background-color:red;
+    height:45px;
+    width:245px;
+    border-radius:7px;
+    border:none
+}

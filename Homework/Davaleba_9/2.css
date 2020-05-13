@@ -1,0 +1,35 @@
+.container{
+    height:500px;
+    width:700px;
+    margin:auto;
+    border:1px solid;
+}
+.container label{
+    margin-left:40px;
+    margin-top:60px
+}
+.container input{
+    /* margin-top:50px; */
+    border-left:none;
+    border-right:none;
+    border-top:none;
+    width:500px;
+    height:40px;
+    margin-left:40px
+}
+table{
+    /* border:1px solid; */
+}
+table td{
+    height:70px;
+    text-align: right;
+}
+form{
+    margin-top:20px;
+    margin-left:30px
+}
+textarea{
+    border:none;
+    border-bottom:2px solid lightgrey;
+
+}
