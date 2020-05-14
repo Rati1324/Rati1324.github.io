@@ -1,0 +1,42 @@
+body{
+    margin:0;
+}
+.container{
+    /* position:relative; */
+    margin:auto;
+    min-height:500px;
+    width:600px;
+    border:1px solid;
+}
+.head{
+    margin:auto;
+    border:1px solid;
+    height:60px;
+    width:600px
+}
+
+.menu1{
+    float:left;
+    border:1px solid;
+    height:200px;
+    width:120px;
+}
+.text1{
+    min-height:400px;
+    border:1px solid;
+    /* height:130px; */
+    width:456px;
+    margin-left:122px;
+    padding-top:20px;
+    padding-left:20px
+}
+
+.footer{
+    margin-left:499px;
+    /* display:table-cell; */
+    border:1px solid;
+    height:135px;
+    width:600px;
+    /* position:absolute; */
+    bottom:0px
+}
