@@ -1,50 +1,89 @@
-@keyframes anim{
-    0%{
-        top:0px;
-        left:0px
-    }
-    30%{
-        top:0px;
-        left:378px;
-    }
-    50%{
-        left:378px;
-        top:380px;
-    }
-    60%{
-        top:380px;
-        left:0px;
-    }
-    70%{
-        top:0px;
-        left:0px
-    }
-    100%{
-        top:380px;
-        left:378px
-    }
-    /* 100%{
-        top:380px;
-        left:378px;
-    } */
+@keyframes anim1{
+    from{width:50px;
+    font-size:5px}
+    to{width:637px;
+    font-size:19px}
 }
-.rec{
-    position:absolute;
-    height:20px;
-    width:20px;
-    border:1px solid;
-    animation-name:anim;
-    animation-duration:8s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    background-color:red;
-    animation-timing-function: linear;
 
+@keyframes anim2{
+    0%{width:50px;
+    font-size:5px}
+    50%{width:637px;
+    font-size:19px}
+    100%{width:50px;
+        font-size:5px}
+    }
+
+@keyframes anim3{
+    0%{left:0px;top:0px}
+    25%{left:600px;top:0px}
+    50%{left:600px;top:75px;}
+    75%{left:0px;top:75px}
+    100%{left:0px;top:0px}
 }
+
 .container{
-    position:relative;
+    background-color:silver;
     margin:auto;
-    height:400px;
-    width:400px;
-    border:1px solid
+    height:300px;
+    width:700px;
+    padding-top:10px;
+    padding-left:30px
 }
+
+.box1{
+    background-color: green;
+    height:50px;
+    min-width:50px;
+    border:2px solid red;
+    display:inline-block;
+    text-align: center;
+}
+
+.text1{
+    animation-name: anim1;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    margin-top:15px;
+    width:71px;
+}    
+
+.box2{
+    position: relative;
+    background-color: yellow;
+    border:2px solid blue;
+    height:50px;
+    min-width:50px;
+    display:inline-block;
+    text-align: center;
+    overflow: hidden;
+}
+
+.text2{
+    animation-name: anim2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    margin-top:15px;
+    font-size:5px;
+    width:71px;
+}   
+
+.box3{
+    animation-name: anim3;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position:relative;
+    background-color: blue;
+    border:2px solid red;
+    height:50px;
+    min-width:50px;
+    display:inline-block;
+    text-align: center;
+}
+
+.text3{
+    width:71px;
+}   

@@ -1,0 +1,50 @@
+@keyframes anim{
+    0%{
+        top:0px;
+        left:0px
+    }
+    30%{
+        top:0px;
+        left:378px;
+    }
+    50%{
+        left:378px;
+        top:380px;
+    }
+    60%{
+        top:380px;
+        left:0px;
+    }
+    70%{
+        top:0px;
+        left:0px
+    }
+    100%{
+        top:380px;
+        left:378px
+    }
+    /* 100%{
+        top:380px;
+        left:378px;
+    } */
+}
+.rec{
+    position:absolute;
+    height:20px;
+    width:20px;
+    border:1px solid;
+    animation-name:anim;
+    animation-duration:6s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    background-color:red;
+    animation-timing-function: linear;
+
+}
+.container{
+    position:relative;
+    margin:auto;
+    height:400px;
+    width:400px;
+    border:1px solid
+}
