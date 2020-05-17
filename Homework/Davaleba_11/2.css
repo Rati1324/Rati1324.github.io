@@ -16,9 +16,9 @@
 
 @keyframes anim3{
     0%{left:0px;top:0px}
-    25%{left:600px;top:0px}
-    50%{left:600px;top:75px;}
-    75%{left:0px;top:75px}
+    40%{left:600px;top:0px}
+    50%{left:600px;top:75px}
+    90%{left:0px;top:75px}
     100%{left:0px;top:0px}
 }
 
@@ -72,7 +72,7 @@
 
 .box3{
     animation-name: anim3;
-    animation-duration: 5s;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     position:relative;
