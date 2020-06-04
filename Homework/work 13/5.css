@@ -1,0 +1,36 @@
+.container{
+    height:250px;
+    width: 600px;
+    background-color: grey;
+    /* padding:18px 0px 0px 20px; */
+    box-sizing: border-box;
+    display:flex;
+    justify-content:center ;
+    align-items: center;
+    margin:auto;
+    margin-top:150px;
+
+}
+
+.innercont{
+    border:1px solid;
+    height:200px;
+    width:548px;
+}
+
+@keyframes anim{
+    0%{transform:translate(-20px,-20px)}
+    25%{transform:translate(525px,-20px)}
+    50%{transform: translate(525px,180px)}
+    75%{transform: translate(-20px,180px)}
+    100%{transform:translate(-20px,-20px)}
+}
+
+.box{
+    border:1px solid red;
+    height:40px;
+    width:40px;
+    background-color: green;
+    animation: anim 5s infinite;
+    animation-timing-function: linear;
+}
