@@ -1,6 +1,6 @@
 body{
     margin:0;
-    background-color: rgb(113, 113, 173)
+    background-color: rgb(60, 106, 190)
 }
 
 .outercontainer{
@@ -204,6 +204,6 @@ nav{
     background-color:none;
 }
 
-.footer a:hover{background-color:rgb(113, 113, 173)}
+.footer a:hover{background-color:rgb(162, 197, 162)}
 
-.bottom a{color:white;margin-left:0px}
+.bottom a{color:white;}
