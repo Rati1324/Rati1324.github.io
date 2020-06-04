@@ -1,0 +1,35 @@
+
+.container{
+    width:800px;
+    height:110px;
+    background-color: lightgrey;
+    margin:auto;
+    margin-top:200px;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding:20px;
+    box-sizing: border-box;
+}
+
+.container div{
+    border:2px solid green;
+    background-color: red;
+    height:40px;
+    width:14%;
+}
+
+@media screen and (max-width:850px){
+    .container {
+        flex-direction:column;
+        height:290px;
+    }
+    
+    .container div{
+        width:90%;
+        /* margin-bottom:1px; */
+    }
+}
+
+
+

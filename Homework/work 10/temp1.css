@@ -1,0 +1,10 @@
+.outercontainer{
+    border:1px solid;
+    height:200px;
+    width:200px;
+}
+.inner1{
+    border:1px solid;
+    height:20px;
+    width:20px
+}
