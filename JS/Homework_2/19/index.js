@@ -13,7 +13,7 @@ function draw_table(rows,columns,amount){
         for (j=0; j < columns; j++){
             column = document.createElement("td")
             row.appendChild(column)
-            if (amount != 0){
+            if (amount){
                 column.innerHTML = random_img()
                 amount--
             }
