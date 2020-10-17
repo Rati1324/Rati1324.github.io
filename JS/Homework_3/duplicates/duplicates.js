@@ -1,4 +1,5 @@
 function no_duplicate(string){
+    document.write("shetanili - " +string + "<br>")
     res = ""
     counter = 0
     string_count = {}
@@ -12,11 +13,12 @@ function no_duplicate(string){
         }
         counter++
     }
+    
     for (i in string_count){
         document.write(i)
         document.write(" - " + string_count[i])
         document.write("<br>")
     }
-    return res
+    document.write("shedegi" + " - " + res )
 }
 
