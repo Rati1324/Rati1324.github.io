@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        date = new Date()
+        months = ["იანვარი","თებერვალი","მარტი","აპრილი","მაისი",
+                "ივნისი","ივლისი","აგვისტო","სექტემბეტი",
+                "ოქტომბერი","ნოემბერი","დეკემბერი"]
+        days = ["ორშაბათი","სამშაბათი","ოთხშაბათი","ხუთშაბათი","პარასკევი","შაბათი","კვირა"]
+        year = date.getFullYear()
+        month = date.getMonth()
+        day = date.getDay()
+        hour = date.getHours()
+        min = date.getMinutes()
+        sec = date.getSeconds()
+
+        document.write(year)
+        document.write(", ")
+        document.write(day)
+        document.write(" ")
+        document.write(months[month])
+        document.write(", ")
+        document.write(days[day])
+        document.write(", ")
+        document.write(hour)
+        document.write(":")
+        document.write(min)
+        document.write(":")
+        document.write(sec)
+
+
+    </script>
+</body>
+</html>

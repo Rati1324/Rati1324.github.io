@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{margin-left:450px;font-size: 150px;}
+</style>
+<body>
+
+    <script>
+        
+        function clock(){
+            now = new Date();
+            hour = now.getHours()
+            minute = now.getMinutes()
+            sec = now.getSeconds()
+            if (minute<10){minute = "0" + minute}
+            if (sec<10){sec = "0" + sec}
+
+            setTimeout(clock,1000)
+            body = document.body
+            body.innerHTML = hour + " : " + minute + " : " + sec
+        }
+
+        function zeros(){
+            
+        }
+        clock()
+        body = document.body
+    </script>
+    
+</body>
+</html>

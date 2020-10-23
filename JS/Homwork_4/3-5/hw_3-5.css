@@ -1,0 +1,8 @@
+body{background-color: lightgrey;}
+div{border-radius: 20px; background-color: white;
+    margin:auto;
+    min-height:50px;width:600px;
+    color:red;
+    font-size: 40px;
+    text-shadow: 1px 1px 1px yellow;
+}
