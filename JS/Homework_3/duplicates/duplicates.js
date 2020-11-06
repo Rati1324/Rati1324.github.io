@@ -20,5 +20,8 @@ function no_duplicate(string){
         document.write("<br>")
     }
     document.write("shedegi" + " - " + res )
+    document.write("<br>")
+    document.write("<br>")
+
 }
 

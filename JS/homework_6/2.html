@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .calc{
+            margin:auto;
+            background-color: lightgrey;
+            height:300px;
+            width:300px;
+            padding:10px;
+            box-sizing: border-box;
+        }
+        input{
+            width:275px;height:30px;
+            margin-right:30px;
+        }
+        button{height:40px;width:40px;}
+        .operations{
+            /* margin-left:240px; */
+            width:180px;
+        }
+        .result{
+            margin-top:10px;
+            height:40px;
+            width:280px;
+            background-color:grey;
+            padding:10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="calc">
+        <input type="text">
+        <div class="operations">
+
+            <button value=7 onclick="operations(this.value)">7</button>
+            <button value=8 onclick="operations(this.value)">8</button>
+            <button value=9 onclick="operations(this.value)">9</button>
+            <button value="+" onclick="operations(this.value)">+</button>   
+            <button value=4 onclick="operations(this.value)">4</button>
+            <button value=5 onclick="operations(this.value)">5</button>
+            <button value=6 onclick="operations(this.value)">6</button>
+            <button value="-" onclick="operations(this.value)">-</button>
+            <button value=1 onclick="operations(this.value)">1</button>
+            <button value=2 onclick="operations(this.value)">2</button>
+            <button value=3 onclick="operations(this.value)">3</button>
+            <button value="*" onclick="operations(this.value)">*</button>
+            <button value="/" onclick="operations(this.value)">/</button>
+            <button value=0 onclick="operations(this.value)">0</button>
+            <button onclick="calc()">=</button>
+        </div>
+        <div class="result" id="result" >
+
+        </div>       
+        
+
+    </div>
+    <script src = "2.js"></script>
+</body>
+</html>

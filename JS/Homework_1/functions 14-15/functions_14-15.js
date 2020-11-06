@@ -1,11 +1,12 @@
 
 
-function f_15(r,c,height=200,width=400,border2=1,font_color="black"){
-  body = document.body
+function f_15(r,c,height=200,width=400,border2=1,bg="black"){
+  body = document.body;
   tbl  = document.createElement('table');
   tbl.style.height = height+"px";
   tbl.style.width = width+"px";
   tbl.style.borderWidth = border2+"px";
+  tbl.style.backgroundColor=bg;
   for(i = 0; i < r; i++){
       tr = tbl.insertRow();
       for(j = 0; j < c; j++){
@@ -13,9 +14,7 @@ function f_15(r,c,height=200,width=400,border2=1,font_color="black"){
           text = document.createTextNode((i+1)+","+(j+1));
           span = document.createElement("span");
           span.appendChild(text);
-          span.style.color=font_color;
           td.appendChild(span);
-          span.style.color=font_color;
           td.style.textAlign="center";
          }
       }
@@ -35,7 +34,7 @@ button.addEventListener('click',function(){
   if (table){
     delet();
   }
-  f_15(rows.value,col.value,height.value,width.value,border.value,font_color.value)});
+  f_15(rows.value,col.value,height.value,width.value,border.value,bg.value)});
 
 function delet(){
   let table = document.querySelector("table");
