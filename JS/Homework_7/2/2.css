@@ -1,0 +1,15 @@
+.container{
+    border:2px solid green;
+    padding-left:5px;
+    height:200px;
+    width:700px;
+    margin:auto
+}
+
+.container2{
+    border:2px solid red;
+    background-color: green;
+    padding-left:5px;
+    width:200px;
+    height:53px;
+}

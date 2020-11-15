@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cal.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <table>
+
+            <thead>
+                <tr>
+                    <td colspan="7" id="time" style="border-top:1px solid;border-right:1px solid"></td>
+                </tr>                
+                <tr class="year_month">
+                    <td colspan="3" id="year">
+                    <td colspan="7" style="border-right:1px solid" id="month">
+                    </td>
+                </tr>
+                <tr id="days">
+                    <td>კვ</td>
+                    <td>ორ</td>
+                    <td>სამ</td>
+                    <td>ოთხ</td>
+                    <td>ხუთ</td>
+                    <td>პარ</td>
+                    <td style="border-right:1px solid">შაბ</td>
+                </tr>
+
+            </thead>
+
+            <tbody>
+                
+            </tbody>
+
+        </table>
+        <button class="prev" onclick="prev()">previous</button>
+        <button class="next" onclick="next()">next</button>
+
+        <script src="cal.js" type="text/javascript"></script>
+        <script>
+            top_panel(new Date);
+            time(new Date)
+        </script>
+
+    </div>
+</body>
+</html>
