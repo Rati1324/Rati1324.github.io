@@ -18,14 +18,17 @@
     </div>
 
     <div>
-        <button onclick="parent()">ParentNode</button><br>
-        <button onclick="f_child()">FirstCHild</button><br>
-        <button onclick="n_sibling()">NextSibling</button><br>
-        <button onclick="p_sibling()">PreviousSibling</button><br>
-        <button onclick="l_child()">LastChild</button><br>
+        <button onclick="parent()" id="parent_b">ParentNode</button><br>
+        <button onclick="next_sibling()" id="n_sib">NextSibling</button><br>
+        <button onclick="prev_sibling()" id="p_sib">PreviousSibling</button><br>
+        <button onclick="first_child()" id="f_child">FirstCHild</button><br>
+        <button onclick="last_child()" id="l_child">LastChild</button><br>
     </div>
 
     <script src="2.js"></script>
-    <script>container()</script>
+    <script>
+        container()
+        disable_all();
+    </script>
 </body>
 </html>
