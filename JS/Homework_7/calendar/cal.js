@@ -13,7 +13,7 @@ function time(date){
     if (sec<10){sec = "0" + sec}
     time_panel.innerText = `${hour} : ${min} : ${sec}`
     if (hour==23 && min==59 && sec==59){
-        top_panel(date)
+        setTimeout(top_panel,1500,new Date)
     }
     setTimeout(time,500,new Date)
 }
@@ -29,6 +29,8 @@ function top_panel(date){
     year_panel.innerText = year
     month_panel.innerText = get_month(month)
     days(days_num,date)
+    // setInterval(top_panel,1000,new Date)
+    
 }
 
 function days(days_limit,date){
@@ -49,7 +51,6 @@ function days(days_limit,date){
                 if(count==now){col.classList.add("green");}
                 count++
             }
-            if (j==7){col.style.borderRight="1px solid black"}
             row.appendChild(col)
         }
     }
