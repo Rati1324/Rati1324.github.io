@@ -1,0 +1,40 @@
+body{
+    background-color: grey;
+}
+
+input{
+    width:200px;
+}
+.container{
+    background-color: rgb(207, 199, 199);
+    border:1px solid white;
+    border-radius: 5px;
+    height:200px;
+    width:650px;
+    margin:auto;
+    padding:10px;
+    box-sizing: border-box;
+}
+
+button{
+    height:20px;
+    width:20px;
+    text-align: center;
+}
+.big1{
+    width:250px;
+    height:20px
+}
+.big2{
+    width:79px;
+    height:20px;
+}
+
+.buttons{
+    margin-top:10px;
+    width:340px;
+}
+
+.status{
+    color:green
+}
