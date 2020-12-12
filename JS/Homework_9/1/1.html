@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="1.css">
+</head>
+
+<body>
+    <hr>
+
+    <canvas height="450px" width="600px"></canvas>
+    <div class="lower">
+        <button onmousedown="moveup()" onmouseup="stop()">ზემოთ</button>
+        <button onmousedown="movedown()" onmouseup="stop()">ქვემოთ</button>
+        <button onmousedown="moveleft()" onmouseup="stop()">მარცხნივ</button>
+        <button onmousedown="moveright()" onmouseup="stop()">მარჯვნივ</button>
+        <button onmousedown="movedown();moveleft()" onmouseup="stop()">ქვემოთ-მარცხნივ</button>
+        <button onmousedown="movedown();moveright()" onmouseup="stop()">ქვემოთ-მარჯვნივ</button><br>
+        <button onmousedown="moveup();moveleft()" onmouseup="stop()">ზემოთ-მარცხნივ</button>
+        <button onmousedown="moveup();moveright()" onmouseup="stop()">ზემოთ-მარჯვნივ</button>
+    </div>
+    <script src="1.js"></script>
+
+</body>
+</html>
