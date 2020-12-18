@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height:40px;
+            width:40px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="box">
+
+    </div>
+    <script>
+        div = document.getElementById("box");
+        x = 0
+
+        
+        div.addEventListener("click",() => {
+            x++;
+            if (x==1) {
+                setTimeout(()=>{
+                    if (x==1)console.log("single click");
+                    else console.log("double click");
+                    x = 0;
+                },300)
+            }
+            
+            
+        });
+
+    </script>
+</body>
+</html>
