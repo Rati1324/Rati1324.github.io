@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<style>
+		/* #mydiv {
+		position: absolute;
+		z-index: 9;
+		background-color: #f1f1f1;
+		text-align: center;
+		border: 1px solid #d3d3d3;
+		} */
+
+		#mydivheader {
+		position: absolute;
+		padding: 10px;
+		width:150px;
+		cursor: move;
+		z-index: 10;
+		background-color: #2196F3;
+		color: #fff;
+		}
+	</style>
+<body>
+
+	<h1>Draggable DIV Element</h1>
+
+	<p>Click and hold the mouse button down while moving the DIV element</p>
+
+	<div id="mydivheader">Click here to move</div>
+
+	<script>
+		var element = document.getElementById("mydivheader");
+	
+		var new_x = 0, new_y = 0, old_x = 0, old_y = 0;
+		element.onmousedown = dragMouseDown;
+
+		function dragMouseDown(e) {
+			e.preventDefault();
+			old_x = e.clientX;
+			old_y = e.clientY;
+			document.onmouseup = closeDragElement;
+			document.onmousemove = elementDrag;	
+		}
+
+		function elementDrag(e) {
+			e.preventDefault();
+			new_x = e.clientX - old_x;
+			new_y = e.clientY - old_y;
+			old_x = e.clientX;
+			old_y = e.clientY;
+			element.style.top = (element.offsetTop + new_y) + "px";
+			element.style.left = (element.offsetLeft + new_x) + "px";
+		}
+
+		function closeDragElement() {
+			document.onmouseup = null;
+			document.onmousemove = null;
+		}
+		
+	</script>
+
+</body>
+</html>
