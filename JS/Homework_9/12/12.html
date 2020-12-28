@@ -45,7 +45,7 @@
         
         function drag(e){
             document.onmousemove = (e)=>{
-                if (e.clientX > (container.offsetLeft + 10) && e.clientX < (container.offsetLeft + (container.offsetWidth - 10))){
+                if (e.clientX > (container.offsetLeft + 10) && e.clientX < (container.offsetLeft + (container.offsetWidth - 15))){
                     new_x = e.clientX - container.offsetLeft - 6;
                 }
                 else if (e.clientX <= container.offsetLeft + 10) new_x = 5;
