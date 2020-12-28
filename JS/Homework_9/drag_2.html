@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width:40vh;
+            height:3vh;
+            margin:50vh auto auto auto;
+            border-radius: 10px;
+            background-color: rgb(136, 133, 133);
+            position:relative;
+        }
+        .handle{
+            position:absolute;
+            background-color: blue;
+            height:145%;
+            border-radius:10px;
+            width:5%;
+            top:-20%;
+            left:1%;
+            right:1%;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="handle" id="handle">
+            
+        </div>
+
+    </div>
+
+    <script>
+        var old_x, old_y, new_x, new_y;
+        var handle = document.querySelector("#handle");
+        handle.onmousedown = drag;
+        handle.onmouseup = ()=> {document.onmousemove = null};
+        document.onmouseup = ()=> {document.onmousemove = null};
+        
+        function drag(e){
+            document.onmousemove = (e)=>{
+                if(e.clientX > 720 && e.clientX < 850) new_x = e.clientX - 720;
+                else if (e.clientX > 850) new_x = 156;
+                else if (e.clientX < 720) new_x = 2;
+                handle.style.left = new_x + "px";
+            }
+            
+            
+        }
+        
+    </script>
+</body>
+</html>
