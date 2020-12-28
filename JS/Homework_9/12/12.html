@@ -45,12 +45,11 @@
         
         function drag(e){
             document.onmousemove = (e)=>{
-                if (e.clientX > (container.offsetLeft + 20) && e.clientX < (container.offsetLeft + (container.offsetWidth - 20))){
-                    new_x = e.clientX - container.offsetLeft;
+                if (e.clientX > (container.offsetLeft + 10) && e.clientX < (container.offsetLeft + (container.offsetWidth - 10))){
+                    new_x = e.clientX - container.offsetLeft - 6;
                 }
-                else if (e.clientX <= container.offsetLeft + 20) new_x = 5;
+                else if (e.clientX <= container.offsetLeft + 10) new_x = 5;
                 else {
-                    console.log(handle.style.left)
                     new_x = container.offsetWidth - 20;
                 }
                 handle.style.left = new_x + "px";
