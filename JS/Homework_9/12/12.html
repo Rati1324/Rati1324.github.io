@@ -20,8 +20,8 @@
             border-radius:10px;
             width:15px;
             top:-18%;
-            left:1%;
-            right:1%;
+            left:5px;
+            /* right:1%; */
             cursor: pointer;
         }
 
@@ -45,11 +45,14 @@
         
         function drag(e){
             document.onmousemove = (e)=>{
-                if (e.clientX > (container.offsetLeft + 20) && e.clientX < (container.offsetLeft + container.offsetWidth - 20)){
+                if (e.clientX > (container.offsetLeft + 20) && e.clientX < (container.offsetLeft + (container.offsetWidth - 20))){
                     new_x = e.clientX - container.offsetLeft;
                 }
                 else if (e.clientX <= container.offsetLeft + 20) new_x = 5;
-                else new_x = container.offsetWidth - 20;
+                else {
+                    console.log(handle.style.left)
+                    new_x = container.offsetWidth - 20;
+                }
                 handle.style.left = new_x + "px";
             }
             
