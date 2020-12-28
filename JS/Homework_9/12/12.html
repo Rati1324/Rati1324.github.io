@@ -45,9 +45,9 @@
         function drag(e){
             console.log(e.clientX)
             document.onmousemove = (e)=>{
-                if(e.clientX > 650 && e.clientX < 945) new_x = e.clientX - 650;
+                if(e.clientX > 650 && e.clientX < 945) new_x = e.clientX;
                 else if (e.clientX > 945) new_x = 296;
-                else if (e.clientX < 650) new_x = 2;
+                else new_x = 2;
                 handle.style.left = new_x + "px";
             }
             
