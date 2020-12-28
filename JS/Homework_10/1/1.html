@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="1.css">
+</head>
+<body>
+    <div class="container">
+        <h2>მარტივი სლაიდერის აწყობა</h2>
+        <div class="img_container">
+            <img src="img/img_1.jpg" alt="" id="img_1">
+            <img src="img/img_2.jpg" alt="" id="img_2">
+            <img src="img/img_3.jpg" alt="" id="img_3">
+            <img src="img/img_4.jpg" alt="" id="img_4">
+        </div>
+
+        <div class="slider_container">
+            <div class="slider">
+                <p class="inner_text">SLIDER</p>
+                <img src="" alt="" id="image" class="image_style">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var img_1 = document.querySelector("#img_1");
+        var img_2 = document.querySelector("#img_2");
+        var img_3 = document.querySelector("#img_3");
+        var img_4 = document.querySelector("#img_4");
+        var slider = document.querySelector("#image");
+        var inner_text = document.getElementsByClassName("inner_text")[0];
+        img_1.addEventListener("mouseover",()=>{slide(event)});
+        img_2.addEventListener("mouseover",()=>{slide(event)});
+        img_3.addEventListener("mouseover",()=>{slide(event)});
+        img_4.addEventListener("mouseover",()=>{slide(event)});
+
+        function slide(e){
+            slider.src = `img/${e.target.id}.jpg`;
+            image.style.display = "block";
+            if (inner_text) inner_text.remove();
+        }
+    </script>
+</body>
+</html>
