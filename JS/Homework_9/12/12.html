@@ -19,7 +19,7 @@
             height:145%;
             border-radius:10px;
             width:5%;
-            top:-20%;
+            top:-18%;
             left:1%;
             right:1%;
             cursor: pointer;
@@ -36,21 +36,22 @@
     </div>
 
     <script>
-        var old_x, old_y, new_x, new_y;
+        var new_x;
         var handle = document.querySelector("#handle");
+        var container = document.querySelector(".container");
         handle.onmousedown = drag;
         handle.onmouseup = ()=> {document.onmousemove = null};
         document.onmouseup = ()=> {document.onmousemove = null};
         
         function drag(e){
-            console.log(e.clientX)
             document.onmousemove = (e)=>{
-                if(e.clientX > 650 && e.clientX < 945) new_x = e.clientX;
-                else if (e.clientX > 945) new_x = 296;
-                else new_x = 2;
+                if (e.clientX > (container.offsetLeft) && e.clientX < (container.offsetLeft + container.offsetWidth)){
+                    new_x = e.clientX - container.offsetLeft;
+                }
+                else if (e.clientX <= container.offsetLeft)new_x = 0;
+                else new_x = container.offsetWidth
                 handle.style.left = new_x + "px";
             }
-            
             
         }
         
