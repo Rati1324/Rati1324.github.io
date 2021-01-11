@@ -23,17 +23,7 @@ app.get("/register", (req,res) => {
 })
 
 app.post("/register", (req, res) =>{
-    var errors = validate(req.body)
-    if (errors.email.length>0 || errors.phone.length>0 || 
-        (errors.password.length>0) && errors.password[0].split(" ")[2] == "weak") 
-            res.render("register", {msg:errors})
-    else {
-        // save the user 
-        var user = new account(req.body);
-        user.save()
-        .then((result) => res.redirect('/'))
-        .catch((err) => console.log(err))
-    }
+    
 })
 
 app.get("/", (req,res) => {
