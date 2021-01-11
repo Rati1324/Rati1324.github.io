@@ -1,10 +1,9 @@
 const express = require('express')
 const app = express();
 const mongoose = require("mongoose")
-const mor = require("morgan")
-const reg_route = require('./routes/page_routes')
 const account = require("./models/account")
-const validate = require("./scripts/validation")
+// const validate = require("./scripts/validation")
+const bcrypt = require("bcryptjs")
 
 app.set("view engine","ejs")
 app.use(express.json())
@@ -22,8 +21,27 @@ app.get("/register", (req,res) => {
     res.render("register", {msg: 0})
 })
 
-app.post("/register", (req, res) =>{
-    
+app.post("/register", async (req, res) =>{
+    console.log(req.body)
+    var { email, password: plainTextPassword, confirm_password, dob, f_name, l_name, phone } = req.body;
+    var password = await bcrypt.hash(plainTextPassword, 10)
+
+    try{
+        const response = await account.create({
+            email,
+            password,
+            confirm_password,
+            dob,
+            f_name,
+            l_name,
+            phone
+        })
+        console.log("user created successfully: ", response)
+    }
+    catch(err){
+        console.log(err)
+        return res.json({ status: 'bad' })
+    }
 })
 
 app.get("/", (req,res) => {

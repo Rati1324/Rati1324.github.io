@@ -9,8 +9,8 @@
 
 <body>
         
-        <header>
-            <h2>Student Portal</h2>
+    <header>
+        <h2>Student Portal</h2>
             <nav>
                 <ul>
                     <li><a href="/register">Register</a></li>
@@ -18,19 +18,16 @@
                     <li><a href="">Contact</a></li>
                 </ul>
             </nav>
-        </header>
+    </header>
 
-        <div class="main_container">
-            
+    <div class="main_container">
 
-            <h3>Register</h3>
-            
-            <form autocomplete="off" action="/register" method="POST">
-                    
-                <ul>
-                    <li>
-                        <label for="email">E-mail:</label>
-                        <input type="text" id="email" name="email" required>
+        <h3>Register</h3>
+        <form autocomplete="off" action="/register" method="POST">
+            <ul>
+                <li>
+                    <label for="email">E-mail:</label>
+                        <input type="text" id="email" name="email" >
                         <% if (msg!=0 && msg.email.length>0){ %>
                             <div class="error_container">
                                 <% for (let i=0; i<msg.email.length; i++){ %>
@@ -38,55 +35,77 @@
                                 <% } %>
                             </div>
                         <% } %>
-                    </li>
+                </li>
                     
-                    <li>
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" required >
-                    </li>
+                <li>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password"  >
+                </li>
 
-                    <li>
-                        <label for="password_confirm">Confirm Password:</label>
-                        <input type="password" id="password_confirm" name="password_confirm" required>
-                        <% if (msg!=0 && msg.password.length>0){ %>
-                            <div class="error_container">
-                                <p class="strength"><%= msg.password[0] %></p>
-                                <p class="error"> <%= msg.password[1] %> </p>
-                            </div>
-                        <% } %>
-                    </li>
+                <li>
+                    <label for="password_confirm">Confirm Password:</label>
+                    <input type="password" id="password_confirm" name="password_confirm" >
+                    <% if (msg!=0 && msg.password.length>0){ %>
+                        <div class="error_container">
+                            <p class="strength"><%= msg.password[0] %></p>
+                            <p class="error"> <%= msg.password[1] %> </p>
+                        </div>
+                    <% } %>
+                </li>
                     
-                    <li>
-                        <label for="dob">Date of Birth:</label>
-                        <input type="date" id="dob" name="dob" required >
-                    </li>
+                <li>
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob"  >
+                </li>
 
-                    <li class="name_input">
-                        <label>Name:</label><br>
-                        <input type="text" id="f_name" placeholder="First" name="f_name" required>
-                        <input type="text" id="l_name" placeholder="Last" name="l_name" required>
-                    </li>
+                <li class="name_input">
+                    <label>Name:</label><br>
+                    <input type="text" id="f_name" placeholder="First" name="f_name" >
+                    <input type="text" id="l_name" placeholder="Last" name="l_name" >
+                </li>
 
-                    <li>
-                        <label for="phone">Phone:</label>
-                        <input type="text" id="phone" name="phone" required>
-                        <% if (msg!=0 && msg.phone.length>0){ %>
-                            <div class="error_container">
-                                <p class="error"><%= msg.phone[0] %></p>
-                            </div>
-                        <% } %>
-                    </li>
+                <li>
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" name="phone" >
+                    <% if (msg!=0 && msg.phone.length>0){ %>
+                        <div class="error_container">
+                            <p class="error"><%= msg.phone[0] %></p>
+                        </div>
+                    <% } %>
+                </li>
 
-                    <li style="display:flex;flex-direction: column;">
-                        <button>Submit</button>
-                    </li>
+                <li style="display:flex;flex-direction: column;">
+                    <button>Submit</button>
+                </li>
 
                     
-                </ul>
-            </form>
-        </div>
+            </ul>
+        </form>
+    </div>
+    <script>
+        const form = document.querySelector("table")
+        form.addEventListener("sumbit", register)
 
-        <footer>
-        </footer>
+        async function register(e){
+            e.preventDefault()
+            var email = document.getElementById("email")
+            var password = document.getElementById("password")
+
+            var result = fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email,
+                    password
+                })
+            })
+            console.log(res)
+        }
+    </script>
+
+    <footer>
+    </footer>
 </body>
 </html>
