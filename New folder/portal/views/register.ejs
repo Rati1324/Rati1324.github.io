@@ -23,7 +23,7 @@
     <div class="main_container">
 
         <h3>Register</h3>
-        <form autocomplete="off" action="/register" method="POST">
+        <form autocomplete="off">
             <ul>
                 <li>
                     <label for="email">E-mail:</label>
@@ -83,25 +83,36 @@
         </form>
     </div>
     <script>
-        const form = document.querySelector("table")
-        form.addEventListener("sumbit", register)
+        const form = document.querySelector("form")
+        form.addEventListener("submit", register)
 
         async function register(e){
             e.preventDefault()
-            var email = document.getElementById("email")
-            var password = document.getElementById("password")
-
-            var result = fetch('/register', {
+            var email = document.getElementById("email").value
+            var password = document.getElementById("password").value
+            var confirm_password = document.getElementById("password_confirm").value
+            var dob = document.getElementById("dob").value
+            var f_name = document.getElementById("f_name").value
+            var l_name = document.getElementById("l_name").value
+            var phone = document.getElementById("phone").value
+            var result = await fetch('/register', {
+                
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
                     email,
-                    password
+                    password,
+                    confirm_password,
+                    dob,
+                    f_name,
+                    l_name,
+                    phone
                 })
             })
-            console.log(res)
+            .then((res) => res.json())
+            // console.log(res)
         }
     </script>
 

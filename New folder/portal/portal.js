@@ -2,8 +2,7 @@ const express = require('express')
 const app = express();
 const mongoose = require("mongoose")
 const account = require("./models/account")
-// const validate = require("./scripts/validation")
-const bcrypt = require("bcryptjs")
+const validate = require("./scripts/validation")
 
 app.set("view engine","ejs")
 app.use(express.json())
@@ -24,8 +23,7 @@ app.get("/register", (req,res) => {
 app.post("/register", async (req, res) =>{
     console.log(req.body)
     var { email, password: plainTextPassword, confirm_password, dob, f_name, l_name, phone } = req.body;
-    var password = await bcrypt.hash(plainTextPassword, 10)
-
+    
     try{
         const response = await account.create({
             email,
@@ -46,6 +44,11 @@ app.post("/register", async (req, res) =>{
 
 app.get("/", (req,res) => {
     res.render("login")
+})
+
+app.post("/", async (req,res) => {
+    console.log(req.body)
+    
 })
 
 
