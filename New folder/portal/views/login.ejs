@@ -52,7 +52,7 @@
                     password
                 })
             })
-            // .then((res) => res.json()) not needed?
+            .then((res) => res.json())
 
             if (res.status == 'ok'){
                 console.log("got the token: ", res.data)

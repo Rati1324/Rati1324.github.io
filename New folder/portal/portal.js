@@ -2,7 +2,7 @@ const express = require('express')
 const app = express();
 const mongoose = require("mongoose")
 const account = require("./models/account")
-const validate = require("./scripts/validation")
+// const validate = require("./scripts/validation")
 
 app.set("view engine","ejs")
 app.use(express.json())
@@ -21,24 +21,16 @@ app.get("/register", (req,res) => {
 })
 
 app.post("/register", async (req, res) =>{
-    console.log(req.body)
-    var { email, password: plainTextPassword, confirm_password, dob, f_name, l_name, phone } = req.body;
-    
-    try{
-        const response = await account.create({
-            email,
-            password,
-            confirm_password,
-            dob,
-            f_name,
-            l_name,
-            phone
-        })
-        console.log("user created successfully: ", response)
-    }
-    catch(err){
-        console.log(err)
-        return res.json({ status: 'bad' })
+    // var errors = validate(req.body)
+    if (errors.email.length>0 || errors.phone.length>0 || 
+        (errors.password.length>0) && errors.password[0].split(" ")[2] == "weak") 
+            res.render("register", {msg:errors})
+    else {
+        // save the user 
+        var user = new account(req.body);
+        user.save()
+        .then((result) => res.redirect('/'))
+        .catch((err) => console.log(err))
     }
 })
 
