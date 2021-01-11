@@ -29,8 +29,9 @@ app.post("/register", (req, res) =>{
         // save the user 
         var user = new account(req.body);
         user.save()
-        .then((result) => res.redirect('/'))
+        .then((res) => res.redirect('/'))
         .catch((err) => console.log(err))
+    console.log("here")
 })
 
 
@@ -40,8 +41,10 @@ app.get("/", (req,res) => {
 
 app.post("/", async (req,res) => {
     console.log(req.body)
-    
 })
 
+app.get("/portal", (req, res) =>{
+    res.render("portal")
+})
 
 
