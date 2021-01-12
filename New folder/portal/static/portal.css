@@ -1,98 +1,76 @@
+html{height:100%;}
 body{
     margin:0;
     padding:0;
+    height:100%;
+}
+
+.header_texts{
+    font-size:2em;
+    max-height:35px;
+    width:100%;
+    color:rgb(175, 175, 166);
+    margin:0;
+    border-bottom:1px solid rgb(39, 39, 39);
+}
+.outer_container{
+    display:flex;
+    height:100%;
+    width:100%;
+}
+
+.sidebar{
+    width:130px;
+    background-color: slategrey;
+    /* height:100vh; */
+}
+
+.header-content{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    width:100%;
 }
 
 header{
     display:flex;
-    justify-content: center;
-    align-items:center;
-    flex-direction: row;
-    padding:29px;
-    background-color: rgb(53, 79, 97);
-    margin:auto;
-}
-
-nav{
-    min-width:30%;
-    min-height:5%;
-    flex-direction:column;
-    text-align: center;
-    padding:0px;
-}
-
-header h2{
-    min-width:30%;
-    position:absolute;
-    left:1%;
-    color:rgb(119, 188, 190);
-}
-
-nav ul{
-    
     width:100%;
-    height:10%;
-    align-self: center;
-    margin:0px;
-    padding:0px;
+    height:6%;
+    background-color: rgb(238, 231, 231);
 }
 
-header nav li{
-    display:inline;
-    margin:10px;
-}
+                                /* CONTENT */
 
-header nav ul li a{
-    text-decoration:none;
-    color:rgb(164, 164, 235);
-    font-size:1.5em;
-}
-
-.main_container{
-    min-height:78vh;
-    width:100%;
-    background-color: rgb(119, 188, 190);
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-    margin:auto;
-}
-
-.inner_container{
-    min-height:78vh;
-    width:50%;
-    background-color: rgb(83, 79, 143);
-}
-
-.inner_menu{
-    height:6vh;
-    display:flex;
-    background-color: rgb(58, 58, 107);
-    justify-content: center;
-    align-items: center;
-}
-
-.inner_menu div{
-    display:flex;
-    align-items: center;
-    background-color: rgb(127, 134, 134);
+.content{
     height:100%;
-    color:white;
-    padding-left:10px;
-    padding-right:10px;
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    background-color: rgb(117, 85, 85);
 }
 
-.inner_menu div:hover{
-    background-color: darkgrey;
-    cursor: pointer;
-}
-footer{
+.info{ 
+    height: 100%;
+    width:80%;
     display:flex;
-    justify-content: center;
-    align-items:center;
-    flex-direction: row;
-    height:11vh;
-    width:100%;
-    background-color: rgb(53, 79, 97);
-    margin:auto;
+    flex-direction: column;
+    padding:30px;
+    box-sizing: border-box;
+    background-color: steelblue;
+}
+
+.student_info{
+    display:flex;
+    justify-content: space-between;
+    width:90%;
+}
+p{
+    margin-bottom:10px;
+    margin-top:10px;
+}
+
+.calendar{
+    height:100%;
+    width:25%;
+    background-color: tan;
 }
