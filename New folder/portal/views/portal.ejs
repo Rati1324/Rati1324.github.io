@@ -41,6 +41,8 @@
             </div>
         </div>
 
+    
+ 
         <div class="header_content">
             <header>
                 
@@ -49,89 +51,97 @@
             <div class="content">
 
                 <div class="info">
-                    <h2 class="header_texts"> Student </h2>
-                    <div class="student_info">
-                        <div>
-                            <p>Jack Jackson</p>
-                            <p>Computer Science</p>
+                    <div class="student_outer">
+                        <h2 class="header_texts"> Student </h2>
+                        <hr>
+                        <div class="student_info">
+                            <div>
+                                <p>Jack Jackson</p>
+                                <p>Computer Science</p>
+                            </div>
+                            
+                            <div>
+                                <p>Year: 3</p>
+                                <p>Semester: 1</p>
+                            </div>
+                            
+                            <div>
+                                <p>GPA: 0.3</p>
+                                <p>Credits: 53</p>
+                            </div>
+                            
+                            <div>
+                                <p>Attendance: 50%</p>
+                                <p>Fees: 0</p>
+                            </div>
+                            
                         </div>
-                        
-                        <div>
-                            <p>Year: 3</p>
-                            <p>Semester: 1</p>
-                        </div>
-                        
-                        <div>
-                            <p>GPA: 0.3</p>
-                            <p>Credits: 53</p>
-                        </div>
-                        
-                        <div>
-                            <p>Attendance: 50%</p>
-                            <p>Fees: 0</p>
-                        </div>
-                        
                     </div>
-                    
-                    <div class="classes">
+
+                    <div class="classes_outer">
                         <h2 class="header_texts" style="margin-top:2px;"> Classes </h2>
-                        <table>
-                            <thead>
-                                <td>Name</td>
-                                <td>Lecturer</td>
-                                <td>Credits</td>
-                                <td>My Total Grade</td>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Python</td>
-                                    <td>Someone</td>
-                                    <td>53</td>
-                                    <td>11</td>
-                                </tr>
-                                <tr>
-                                    <td>Python</td>
-                                    <td>Someone</td>
-                                    <td>53</td>
-                                    <td>11</td>
-                                </tr>
-                                <tr>
-                                    <td>Python</td>
-                                    <td>Someone</td>
-                                    <td>53</td>
-                                    <td>11</td>
-                                </tr>
-                                <tr>
-                                    <td>Python</td>
-                                    <td>Someone</td>
-                                    <td>53</td>
-                                    <td>11</td>
-                                </tr>
-                                <tr>
-                                    <td>Python</td>
-                                    <td>Someone</td>
-                                    <td>53</td>
-                                    <td>11</td>
-                                </tr>
-                                <tr>
-                                    <td>Python</td>
-                                    <td>Someone</td>
-                                    <td>53</td>
-                                    <td>11</td>
-                                </tr>
-                                <tr>
-                                    <td>Python</td>
-                                    <td>Someone</td>
-                                    <td>53</td>
-                                    <td>11</td>
-                                </tr>
-                              
-                            </tbody>
+                        <hr>
+                        <div class="table_wrapper">
+                            <table>
+                                <thead>
+                                    <td>Name</td>
+                                    <td>Lecturer</td>
+                                    <td>Credits</td>
+                                    <td>My Total Grade</td>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Python</td>
+                                        <td>Someone</td>
+                                        <td>53</td>
+                                        <td>11</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Python</td>
+                                        <td>Someone</td>
+                                        <td>53</td>
+                                        <td>11</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Python</td>
+                                        <td>Someone</td>
+                                        <td>53</td>
+                                        <td>11</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Python</td>
+                                        <td>Someone</td>
+                                        <td>53</td>
+                                        <td>11</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Python</td>
+                                        <td>Someone</td>
+                                        <td>53</td>
+                                        <td>11</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Python</td>
+                                        <td>Someone</td>
+                                        <td>53</td>
+                                        <td>11</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Python</td>
+                                        <td>Someone</td>
+                                        <td>53</td>
+                                        <td>11</td>
+                                    </tr>
+                                
+                                </tbody>
 
-                        </table>    
-                    </div>
+                            </table>    
+                        </div> 
+                    </div> 
 
-                    <h2 class="header_texts" style="margin-top:10px">University News</h2>
+                    <div class="news_outer">
+                    <h2 class="header_texts">University News</h2>
+                    <hr>
                     <div class="news">
                         <div class="left" id="left">
                             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
@@ -190,37 +200,75 @@
                         </div>
 
                     </div> 
+                    </div>
     
                 </div> 
 
-                <div class="calendar">
-                </div>
-                
-            </div> <!-- CONTENT -->
+           
+
+                    <div class="calendar">
+
+                            <table>
+                    
+                                <thead>
+                                    <tr>
+                                        <td colspan="7" id="time"></td>
+                                    </tr>                
+                                    <tr class="year_month">
+                                        <td colspan="4" style="padding-left:20px" id="month">
+                                        <td colspan="4" style="padding-right:50px" id="year">
+                                        </td>
+                                    </tr>
+                                    <tr id="days">
+                    
+                                        <td>კვ</td>
+                                        <td>ორ</td>
+                                        <td>სა</td>
+                                        <td>ოთ</td>
+                                        <td>ხუ</td>
+                                        <td>პა</td>
+                                        <td>შა</td>
+                                        
+                                    </tr>
+                    
+                                </thead>
+                    
+                                <tbody id="cal_tbody">
+                                    
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="4" onclick="prev()"><button>Previous</button></td>
+                                        <td colspan="3" onclick="next()"><button>Next</button></td>
+                                    </tr>
+                                </tfoot>
+                            </table> 
+
+                            <div class="events">
+
+                                <h2>Upcoming Events</h2>
+                                <ol>
+                                    <li>Quiz</li>
+                                    <li>Midterm</li>
+                                    <li>Presentation</li>
+                                </ol>
+
+                            </div>
+
+                            
+                    </div> 
             
-        </div class> <!-- HEADER_CONTENT -->
+                
+            </div>
+            
+        </div> 
+    </div>
+
+    <footer>
+    </footer>
+    <script src="portal_scripts.js">
         
-    </div> <!-- OUTER_CONTAINER -->
-
-    <script>
-        var left = document.getElementById("left")
-        var right = document.getElementById("right")
-
-        left.addEventListener('click', () => {
-            move_left(0, 0);
-        })
-
-        right.addEventListener('click', () => {
-            move_left(0, 1);
-        })
-
-        function move_left(stop, dir){
-            images = document.getElementById("images")
-            if (dir == 0) images.style.left = (parseInt(getComputedStyle(images).left) - 20) + "px";
-            else images.style.left = (parseInt(getComputedStyle(images).left) + 20) + "px";
-            if (stop<=160) setTimeout(move_left, 10, stop+20, dir)   
-        }
-        
+       
         
     </script>
 

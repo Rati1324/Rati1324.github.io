@@ -2,6 +2,7 @@ const express = require('express')
 const app = express();
 const mongoose = require("mongoose")
 const account = require("./models/account")
+const class_schema = require("./models/classes")
 // const validate = require("./scripts/validation")
 
 app.set("view engine","ejs")
@@ -45,6 +46,10 @@ app.post("/", async (req,res) => {
 
 app.get("/portal", (req, res) =>{
     res.render("portal")
+})
+
+app.get("/portal/classes", (req, res) =>{
+    res.render("classes")
 })
 
 
