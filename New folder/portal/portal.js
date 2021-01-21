@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require("mongoose")
 const account = require("./models/account")
 const class_info = require("./models/classes")
-const validate = require("./scripts/validation")
+const validate = require("./static/validation")
 
 app.set("view engine","ejs")
 app.use(express.json())

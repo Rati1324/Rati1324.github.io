@@ -89,7 +89,7 @@
         
         // MAYBE ADD INTERACTIVE VALIDATION????
 
-        async function register(e){
+        function register(e){
             e.preventDefault()
 
             document.getElementById("pw_errors").innerHTML = ""
@@ -104,7 +104,7 @@
             var l_name = document.getElementById("l_name").value
             var phone = document.getElementById("phone").value
             
-            var result = await fetch('/register', { // await was here
+            var result = fetch('/register', { // await was here
                 method: 'POST',
                 // REDIRECT : 'FOLLOW'
                 headers: {
