@@ -22,20 +22,28 @@ html, body{
         align-items: center;
     }
 
-        .sidebar div{
+        .sidebar a{
+            margin: 0px;
             margin-top:20px;
             margin-right:8px;
             display:flex;
             align-items: center;
             flex-direction:column;
-            width:96%;
-            border-left:8px solid transparent;
+            width:100%;
+            border-left:5px solid transparent;
+
         }
 
-        .sidebar div:hover{
-            border-left:8px solid rgb(0, 0, 0);
+        .sidebar a:hover{
+            border-left:5px solid rgb(0, 0, 0);
         }
-
+        
+        .sidebar a{
+            margin: 0px;
+            color: inherit;
+            text-decoration: none;
+        }
+        
 
 
 .header_content{
@@ -92,15 +100,18 @@ html, body{
             }
 
         .classes_outer{
+            min-height:35%;
+            /* margin-top:20px; */
         }
             .table_wrapper{
+                height:70%;
                 margin-top:5px;
             }
                 .info table{
                     width:100%;
+                    min-height:27%;
                     border-spacing: 0;
                 }
-
 
                 .info table thead td{
                     font-size: 1.2em;
@@ -109,12 +120,12 @@ html, body{
                 }
 
                 .info table tbody{
-                    height:60px;
+                    min-height: 80px;
                     font-size:1.2em;
                 }
 
-                .info table tbody tr{
-                    height:30px;
+                .info table tbody td{
+                    height:1px;
                 }
 
                 .info table tbody tr:hover{
@@ -243,7 +254,7 @@ button:hover{
     /*  */
 }
 
-p{
+.info p{
     margin:0px;
     font-size:1.7em;
 }
@@ -252,6 +263,7 @@ hr{
     width:100%;
     margin:0px;
 }
+
 
 footer{
     height:5vh;

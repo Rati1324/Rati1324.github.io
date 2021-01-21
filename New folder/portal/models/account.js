@@ -25,6 +25,9 @@ const account_schema = new schema({
     phone:{
         type:Number,
         required: true,
+    },
+    classes:{
+        type:Array
     }
 }, {timestamps: true});
     

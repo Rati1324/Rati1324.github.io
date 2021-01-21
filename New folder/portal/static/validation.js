@@ -1,15 +1,16 @@
 function validate(data){
     var errors = {
-        email:[],
-        password:[],
-        phone:[],
+        email:0,
+        pw_strength:0,
+        password:0,
+        phone:0,
     }
     // email
     if (!data.email.includes('@') || !data.email.includes(".") || data.email.length<6) 
-        errors.email.push('Not a valid email');
+        errors.email = 'Not a valid email';
     else if ( ( data.email.indexOf('@') > data.email.lastIndexOf('.') ) ||
      ( (data.email.length - data.email.lastIndexOf('.')) < 4 ) )
-        errors.email.push('Not a valid email')
+        errors.email = 'Not a valid email';
     
 
     // password
@@ -22,29 +23,31 @@ function validate(data){
         else symbol = 1;
     }
 
-    if (data.password != data.password_confirm) errors.password[1] = "Passwords do not match"
+    if (data.password != data.password_confirm) {
+        errors.password= "Passwords do not match"
+    }
     else if (data.password.length<6){
-        errors.password.push("Password strength: weak")
-        errors.password.push("Minimum 6 characters");
+        errors.pw_strength = "Weak"
+        errors.password = "Minimum 6 characters";
     }
     else if ((lower_case && !upper_case && !symbol)){
-        errors.password.push("Password strength: weak")
-        errors.password.push("try adding uppercase letters and symbols");
+        errors.pw_strength = "Weak"
+        errors.password = "try adding uppercase letters and symbols";
     } 
     else if ((lower_case && upper_case && !symbol) || (lower_case && !upper_case && symbol) || (!lower_case && upper_case && symbol) ){
-        errors.password.push("Password strength: Average")
-        errors.password.push("try adding symbols for a stronger password");
+        errors.pw_strength = "Average"
+        errors.password = "try adding symbols if you want a stronger password";
     }
     else if (lower_case && upper_case && symbol){
-        errors.password.push("Password strength: Strong")
+        errors.pw_strength = "Strong"
     }
     else {
-        errors.password.push("Password strength: weak")
-        errors.password.push("Use symbols/numbers, upprecase and lowercase letters")
+        errors.password = "Weak"
+        errors.password = "Use symbols/numbers, upprecase and lowercase letters"
     }
 
     //phone
-    if (isNaN(data.phone)) errors.phone.push("Not a valid number")
+    if (isNaN(data.phone)) errors.phone = "Not a valid number";
 
     return errors
 }

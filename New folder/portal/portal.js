@@ -2,8 +2,8 @@ const express = require('express')
 const app = express();
 const mongoose = require("mongoose")
 const account = require("./models/account")
-const class_schema = require("./models/classes")
-// const validate = require("./scripts/validation")
+const class_info = require("./models/classes")
+const validate = require("./scripts/validation")
 
 app.set("view engine","ejs")
 app.use(express.json())
@@ -18,38 +18,110 @@ mongoose.connect(dblink, {useNewUrlParser: true, useUnifiedTopology: true})
     
 
 app.get("/register", (req,res) => {
-    res.render("register", {msg: 0})
+    res.render("register")
 })
 
 app.post("/register", (req, res) =>{
-    // var errors = validate(req.body)
-    // if (errors.email.length>0 || errors.phone.length>0 || 
-    //     (errors.password.length>0) && errors.password[0].split(" ")[2] == "weak") 
-    //         res.render("register", {msg:errors})
-    // else {
-        // save the user 
+    
+    var errors = validate(req.body)
+    if (errors.email || errors.phone || errors.pw_strength=="Weak"){
+        console.log("here")
+        return res.status(422).json({
+            errors: errors
+        })
+    }
+    
+    else{
+        console.log("user created")
         var user = new account(req.body);
         user.save()
-        .then((res) => res.redirect('/'))
-        .catch((err) => console.log(err))
-    console.log("here")
+            .then((response) => {
+                return res.status(200).json({
+                    errors:errors
+                })
+            })
+            .catch((err) => {console.log(err)})
+    }
 })
-
 
 app.get("/", (req,res) => {
     res.render("login")
 })
 
-app.post("/", async (req,res) => {
-    console.log(req.body)
+app.post("/", (req,res) => { 
+
+    account.find()
+        .then( result => {
+            result.forEach((item) => {
+                if (item.email == req.body.email && item.password == req.body.pw){
+                    return res.status(200).send()
+                }
+            })
+            return res.status(401).send()
+        })
 })
 
 app.get("/portal", (req, res) =>{
-    res.render("portal")
+    function add_class(acc){
+        class_info.find()
+            .then(result => {
+                var class_list = []
+                result.forEach(elem => {
+                    if (acc.classes.includes(elem.Code)){
+                        class_list.push(elem)
+                    }
+                })
+                return res.render("portal", {class_list: class_list})
+            })
+    }
+    // res.render("portal", {class_list: []})
+
+    account.find()
+        .then( result => {
+            add_class(result[0])
+        })
+
 })
 
 app.get("/portal/classes", (req, res) =>{
-    res.render("classes")
+   
+    class_info.find()
+        .then((result) => { res.render("classes", {classes: result})} )
+        .catch((err) =>{
+            console.log(err);
+        })
+})
+
+app.post("/portal/classes", (req, res) =>{ 
+    var search_param = req.body.search_data
+    var search_by = req.body.search_by
+    
+    class_info.find()
+        .then( response => { 
+            var result = []
+            response.forEach(item => {
+                if (search_by != "Credits"){
+                    if ( item[search_by].toUpperCase() == search_param.toUpperCase() )
+                        result.push(item)
+                }
+                else{
+                    if ( item[search_by] == search_param ) 
+                        result.push(item)
+                }
+
+            })
+            return res.status(200).json({
+                response: result,
+            })
+        // .catch( err => {console.log(err)}) MAYBE NOT NEEDED? MONGOOSE HAS NO CATCH() ?????
+    })
 })
 
 
+app.post("/add_class", (req,res) => {
+    account.find()
+        .then( response => {
+            response[0].classes.push(req.body.code)
+            response[0].save();
+        })
+})

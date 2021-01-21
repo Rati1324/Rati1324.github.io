@@ -8,116 +8,157 @@
 </head>
 
 <body>
-        
+    
     <header>
-        <h2>Student Portal</h2>
-            <nav>
-                <ul>
-                    <li><a href="/register">Register</a></li>
-                    <li><a href="/">Login</a></li>
-                    <li><a href="">Contact</a></li>
-                </ul>
-            </nav>
-    </header>
-
-    <div class="main_container">
-
+        <a href="/">
+            <h3>Log In</h3>
+        </a>
+        <h3>Student Portal</h3>
+        <a href="/contact">
+            <h3>Contact</h3>
+        </a>
+    </header>    
+    
+    <div class="container">
+        <div class="wrapper">
         <h3>Register</h3>
-        <form autocomplete="off">
-            <ul>
-                <li>
-                    <label for="email">E-mail:</label>
-                        <input type="text" id="email" name="email" >
-                        <% if (msg!=0 && msg.email.length>0){ %>
-                            <div class="error_container">
-                                <% for (let i=0; i<msg.email.length; i++){ %>
-                                    <p class="error"> <%= msg.email[i] %> </p>
-                                <% } %>
+                <form autocomplete="off">
+                    <ul>
+                        <li>
+                            <label for="email">E-mail:</label><br>
+                            <input type="text" id="email" name="email" required>
+                            <div class="errors" id="email_errors">
+
+                            </div>    
+                        </li>
+                            
+                        <li>
+                            <label for="password">Password:</label><br>
+                            <input type="password" id="password" name="password"  required>
+                            <div class="pw_strength" id="pw_strength">
+                                <span class="strength_text" id="strength_text">Password Strength: </span>
+                                <span id="strength"></span>
                             </div>
-                        <% } %>
-                </li>
-                    
-                <li>
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password"  >
-                </li>
+                        </li>
 
-                <li>
-                    <label for="password_confirm">Confirm Password:</label>
-                    <input type="password" id="password_confirm" name="password_confirm" >
-                    <% if (msg!=0 && msg.password.length>0){ %>
-                        <div class="error_container">
-                            <p class="strength"><%= msg.password[0] %></p>
-                            <p class="error"> <%= msg.password[1] %> </p>
-                        </div>
-                    <% } %>
-                </li>
-                    
-                <li>
-                    <label for="dob">Date of Birth:</label>
-                    <input type="date" id="dob" name="dob"  >
-                </li>
+                        <li>
+                            <label for="password_confirm">Confirm Password:</label><br>
+                            <input type="password" id="password_confirm" name="password_confirm" required>
+                            <div class="errors" id="pw_errors">
 
-                <li class="name_input">
-                    <label>Name:</label><br>
-                    <input type="text" id="f_name" placeholder="First" name="f_name" >
-                    <input type="text" id="l_name" placeholder="Last" name="l_name" >
-                </li>
+                            </div>
+                        </li>
+                            
+                        <li>
+                            <label for="dob">Date of Birth:</label><br>
+                            <input type="date" id="dob" name="dob">
+                        </li>
 
-                <li>
-                    <label for="phone">Phone:</label>
-                    <input type="text" id="phone" name="phone" >
-                    <% if (msg!=0 && msg.phone.length>0){ %>
-                        <div class="error_container">
-                            <p class="error"><%= msg.phone[0] %></p>
-                        </div>
-                    <% } %>
-                </li>
+                        <li class="name_input">
+                            <label>Name:</label><br>
+                            <input type="text" id="f_name" placeholder="First" name="f_name" required>
+                            <input type="text" id="l_name" placeholder="Last" name="l_name" required>
+                        </li>
 
-                <li style="display:flex;flex-direction: column;">
-                    <button>Submit</button>
-                </li>
+                        <li>
+                            <label for="phone">Phone:</label><br>
+                            <input type="text" id="phone" name="phone" required>
+                            <div class="errors" id="phone_errors">
 
-                    
-            </ul>
-        </form>
+                            </div>
+                            
+                        </li>
+
+                        <li style="display:flex;flex-direction: column;">
+                            <button>Submit</button>
+                        </li>
+
+                            
+                    </ul>
+                </form>
+        </div>
     </div>
-    <%- include("./partials/footer.ejs") %>
+        
+        <footer>
+    </footer>
     
     <script>
         const form = document.querySelector("form")
         form.addEventListener("submit", register)
+        var pw_input = document.getElementById("password")
+        
+        // MAYBE ADD INTERACTIVE VALIDATION????
 
         async function register(e){
             e.preventDefault()
+
+            document.getElementById("pw_errors").innerHTML = ""
+            document.getElementById("email_errors").innerHTML = ""
+            document.getElementById("phone_errors").innerHTML = ""
+
             var email = document.getElementById("email").value
             var password = document.getElementById("password").value
-            var confirm_password = document.getElementById("password_confirm").value
+            var password_confirm = document.getElementById("password_confirm").value
             var dob = document.getElementById("dob").value
             var f_name = document.getElementById("f_name").value
             var l_name = document.getElementById("l_name").value
             var phone = document.getElementById("phone").value
             
-            var result = fetch('/register', { // await was here
+            var result = await fetch('/register', { // await was here
                 method: 'POST',
+                // REDIRECT : 'FOLLOW'
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
                     email,
                     password,
-                    confirm_password,
+                    password_confirm,
                     dob,
                     f_name,
                     l_name,
                     phone
                 })
             })
-            .then((res) => res.json())
-            // console.log(res)
+            .then(res => res.json())
+            .then(data => {
+
+                var errors = data.errors
+                var pw_errors = document.getElementById("pw_errors")
+                var email_errors = document.getElementById("email_errors")
+                var phone_errors = document.getElementById("phone_errors")
+                var strength_text = document.getElementById("strength_text")
+                var strength = document.getElementById("strength")
+
+                // PASSWORD STRENGTH
+                strength_text.style.visibility = "visible"
+                strength_text.style.position = "static"
+                strength.innerHTML = errors.pw_strength
+
+                // EMAIL
+                if (errors.email){
+                    email_errors.innerHTML = errors.email
+                }
+                
+                // PASSWORD
+                
+                if (errors.password){
+                    pw_errors.innerHTML = errors.password;
+                }
+                
+                // PHONE
+                if (errors.phone){
+                    phone_errors.innerHTML = errors.phone;
+                }
+                console.log(errors)
+                if (errors.email==0 && errors.phone==0 && errors.pw_strength!="Weak") {
+                    window.location.href = "http://localhost:3000"
+                }
+                
+            })
         }
     </script>
-
     
 </body>
 </html>
+
