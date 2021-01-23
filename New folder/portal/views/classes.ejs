@@ -33,7 +33,6 @@
                         <option value="Credits">Credits</option>
                         <option value="Time">Time</option>
                         <option value="Code">Code</option>
-                        <option value="Day">Day</option>
                     </select>
                     <button class="search_btn" id="search_btn">Search</button>
                 </div>
@@ -47,7 +46,6 @@
                             <td> Room </td>
                             <td> Time </td>
                             <td> Code </td>
-                            <td> Day </td>
                             <td></td>
                         </tr>
                     </thead>
@@ -80,12 +78,9 @@
         
         function button_function(){
 
-            console.log("CumFucker!")
             var choose = document.querySelectorAll(".choose")
-            // console.log(choose)
             choose.forEach(item => {
                 item.onclick = () => {
-                    console.log("Cumface")
                     fetch("/add_class", {
                         method: 'POST',
                         headers: {

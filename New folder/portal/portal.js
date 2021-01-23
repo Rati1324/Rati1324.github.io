@@ -25,7 +25,6 @@ app.post("/register", (req, res) =>{
     
     var errors = validate(req.body)
     if (errors.email || errors.phone || errors.pw_strength=="Weak"){
-        console.log("here")
         return res.status(422).json({
             errors: errors
         })
@@ -113,7 +112,6 @@ app.post("/portal/classes", (req, res) =>{
             return res.status(200).json({
                 response: result,
             })
-        // .catch( err => {console.log(err)}) MAYBE NOT NEEDED? MONGOOSE HAS NO CATCH() ?????
     })
 })
 

@@ -1,8 +1,8 @@
 function validate(data){
     var errors = {
         email:0,
-        pw_strength:0,
-        password:0,
+        pw_strength:'Weak',
+        password:'',
         phone:0,
     }
     // email
