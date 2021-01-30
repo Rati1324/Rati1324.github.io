@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+    <canvas id='can' height="500" width="700" style='margin:auto; display:block;
+        margin-top:13vh;'>
+
+    </canvas>
+      
+    
+    <script>
+        var can = document.getElementById('can')
+        can.style.border = '1px solid'
+        var ctx = can.getContext('2d')
+        var right = 0, left = 0, up = 0, down = 0
+
+        function component(x, y, width, height){
+            this.width = width
+            this.height = height
+            this.x = x
+            this.y = y
+
+            this.draw = () => {
+                ctx.fillStyle = 'red'
+                ctx.fillRect(this.x, this.y, this.width, this.height)
+            }
+        }
+        
+        var c = new component(20,20,20,20)
+        document.addEventListener('keydown', (e) => {
+
+            switch(e.key){
+
+                case 'ArrowRight': {
+                    break;
+                }
+                
+                case 'ArrowLeft': {
+                    break;
+                }
+
+                case 'ArrowUp': {
+                    break;
+                }
+
+                case 'ArrowDown': {
+                    break;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
