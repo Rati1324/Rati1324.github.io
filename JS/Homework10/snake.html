@@ -6,7 +6,7 @@
     <title>snake</title>
 </head>
 <body>
-    <canvas id='can' height="500" width="700" style='margin:auto; display:block;
+    <canvas id='can' height="300" width="400" style='margin:auto; display:block;
         margin-top:13vh;'>
 
     </canvas>
@@ -20,7 +20,7 @@
         var key_pressed
         var right = 0, left = 0, up = 0, down = 0
         var blocks = [
-            {x: 40, y: 40},
+            {x: 20, y: 20},
             
         ]
         var x_move = 0, y_move = 0;
@@ -45,6 +45,7 @@
                     else if (blocks[0].x == block.x && blocks[0].y == block.y + 20 && y_move == -20) you_lost()
                 })
             }
+
             if (x_move == 20){
                 if (blocks[0].x < can.width - 20) move()
                 else you_lost()
@@ -61,7 +62,7 @@
             }
 
             if (y_move == 20){
-                if (blocks[0].y < can.height -20) move()
+                if (blocks[0].y < can.height - 20) move()
                 else you_lost()
             }
         }
@@ -80,27 +81,28 @@
             if (!food){
                 var last = blocks.pop()
                 ctx.clearRect(last.x, last.y, 20, 20)
-                ctx.clearRect(last.x-2, last.y-1, 20, 20)
+                ctx.clearRect(last.x-1, last.y-1, 21, 21)
             }
             else food = 0
-            blocks.unshift(new_block)
             
+            blocks.unshift(new_block)
             blocks.forEach( block => { 
                 ctx.fillStyle = 'black'
                 ctx.strokeStyle = 'green'
-                ctx.fillRect(block.x, block.y, 18, 18);
-                ctx.strokeRect(block.x, block.y, 18, 18)
+                // ctx.lineWidth = 2
+                ctx.fillRect(block.x, block.y, 19, 19);
+                ctx.strokeRect(block.x, block.y, 19, 19)
             })
         }
 
 
         function add_food(){
-            ctx.clearRect(food_x, food_y, 18, 18)
-            food_x = Math.floor((Math.random() * can.width) / 20) * 20
-            food_y = Math.floor((Math.random() * can.height) / 20) * 20
+            // food_x = can.width - 18,food_y = can.height - 18
+            ctx.clearRect(food_x, food_y, 20, 20)
+            food_x = Math.floor((Math.random() * (can.width - 20) + 20) / 20) * 20
+            food_y = Math.floor((Math.random() * (can.height - 20) + 20)/ 20) * 20
             ctx.fillStyle = 'green'
-            if (food_x != 40 && food_y != 40) ctx.fillRect(food_x, food_y, 18, 18)
-            
+            if ((food_x != 20 || food_y != 20) && blocks.length==1) ctx.fillRect(food_x, food_y, 20, 20)
         }
         
         function change_dir(key){
@@ -147,7 +149,7 @@
 
         move()
         add_food()
-        setInterval(() => {check_food(); check_borders(); change_dir(key_pressed)}, 60)
+        setInterval(() => {check_food(); check_borders(); change_dir(key_pressed)}, 130)
 
     </script>
 </body>
