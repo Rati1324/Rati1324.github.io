@@ -20,17 +20,18 @@
         var right = 0, left = 0, up = 0, down = 0
         var blocks = [
             {x: 180, y: 20},
+            {x: 160, y: 20},
             
         ]
         var x_move = 0, y_move = 0;
         var food_x, food_y; 
 
         function check_borders(){
-            blocks.forEach(block => {
-                if (blocks[0].x == block.x - 20 && blocks[0].y == block.y && x_move == 20) alert('Game Over')
-                else if (blocks[0].x == block.x + 20 && blocks[0].y == block.y && x_move == -20) alert('Game Over')
-                else if (blocks[0].x == block.x && blocks[0].y == block.y - 20 && y_move == 20) alert('Game Over')
-                else if (blocks[0].x == block.x && blocks[0].y == block.y + 20 && y_move == -20) alert('Game Over')
+            blocks.slice(1).forEach(block => {
+                // if (blocks[0].x == block.x - 20 && blocks[0].y == block.y && x_move == 20) alert('Game Over')
+                // else if (blocks[0].x == block.x + 20 && blocks[0].y == block.y && x_move == -20) alert('Game Over')
+                // else if (blocks[0].x == block.x && blocks[0].y == block.y - 20 && y_move == 20) alert('Game Over')
+                // else if (blocks[0].x == block.x && blocks[0].y == block.y + 20 && y_move == -20) alert('Game Over')
             })
             if (x_move == 20){
                 if (blocks[0].x < can.width - 20) move()
@@ -62,7 +63,6 @@
 
         function move(){
 
-            // if (blocks[0].x == blocks[1].x) alert('fuck')
             var new_block = {x: blocks[0].x + x_move, y: blocks[0].y + y_move}
             if (!food){
                 var last = blocks.pop()
@@ -93,6 +93,10 @@
             
         }
         
+        function change_dir(key){
+
+        }
+
         document.addEventListener('keydown', (e) => {
 
             switch(e.key){
@@ -131,8 +135,6 @@
                     }
                     else break;
                 }
-
-                // default:{ console.log('fuck you') ;break}
             }
         })
 
