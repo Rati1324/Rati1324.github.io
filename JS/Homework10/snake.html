@@ -98,11 +98,26 @@
 
         function add_food(){
             // food_x = can.width - 18,food_y = can.height - 18
+            var check = 0
+
             ctx.clearRect(food_x, food_y, 20, 20)
-            food_x = Math.floor((Math.random() * (can.width - 20) + 20) / 20) * 20
-            food_y = Math.floor((Math.random() * (can.height - 20) + 20)/ 20) * 20
-            ctx.fillStyle = 'green'
-            if ((food_x != 20 || food_y != 20) && blocks.length==1) ctx.fillRect(food_x, food_y, 20, 20)
+            while (!check){
+                food_x = Math.floor((Math.random() * (can.width - 20)) / 20) * 20
+                food_y = Math.floor((Math.random() * (can.height - 20)) / 20) * 20
+                for (let i=0; i < blocks.length; i++){
+                    console.log(check)
+                    if (blocks[i].x != food_x && blocks[i].y != food_y) {
+                        check = 1   
+                        break
+                    }
+                }
+            }
+            if (check) {
+                console.log(check)
+                ctx.fillStyle = 'green'
+                ctx.fillRect(food_x, food_y, 20, 20)
+            }
+            
         }
         
         function change_dir(key){
