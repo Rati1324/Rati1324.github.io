@@ -17,40 +17,52 @@
         can.style.border = '1px solid'
         var ctx = can.getContext('2d')
         var food = 0
+        var key_pressed
         var right = 0, left = 0, up = 0, down = 0
         var blocks = [
-            {x: 180, y: 20},
-            {x: 160, y: 20},
+            {x: 40, y: 40},
             
         ]
         var x_move = 0, y_move = 0;
         var food_x, food_y; 
 
+        function you_lost(){
+            if (confirm('You Lost. Try Again?')){
+                blocks = [{x: 20, y: 40}]
+                x_move = 0; y_move = 0;
+                key_pressed = 0
+                ctx.clearRect(0,0,700,500)
+                move(); add_food()
+            }
+        }
+
         function check_borders(){
-            blocks.slice(1).forEach(block => {
-                // if (blocks[0].x == block.x - 20 && blocks[0].y == block.y && x_move == 20) alert('Game Over')
-                // else if (blocks[0].x == block.x + 20 && blocks[0].y == block.y && x_move == -20) alert('Game Over')
-                // else if (blocks[0].x == block.x && blocks[0].y == block.y - 20 && y_move == 20) alert('Game Over')
-                // else if (blocks[0].x == block.x && blocks[0].y == block.y + 20 && y_move == -20) alert('Game Over')
-            })
+            if (blocks.length>1){
+                blocks.slice(1).forEach(block => {
+                    if (blocks[0].x == block.x - 20 && blocks[0].y == block.y && x_move == 20) you_lost()
+                    else if (blocks[0].x == block.x + 20 && blocks[0].y == block.y && x_move == -20) you_lost()
+                    else if (blocks[0].x == block.x && blocks[0].y == block.y - 20 && y_move == 20) you_lost()
+                    else if (blocks[0].x == block.x && blocks[0].y == block.y + 20 && y_move == -20) you_lost()
+                })
+            }
             if (x_move == 20){
                 if (blocks[0].x < can.width - 20) move()
-                else alert('Game Over')
+                else you_lost()
             }
 
             if (x_move == -20){
                 if (blocks[0].x > 0) move()
-                else alert('Game Over')
+                else you_lost()
             }
 
             if (y_move == -20){
                 if (blocks[0].y > 0) move()
-                else alert('Game Over')
+                else you_lost()
             }
 
             if (y_move == 20){
                 if (blocks[0].y < can.height -20) move()
-                else alert('Game Over')
+                else you_lost()
             }
         }
         
@@ -67,46 +79,38 @@
             if (!food){
                 var last = blocks.pop()
                 ctx.clearRect(last.x, last.y, 20, 20)
+                ctx.clearRect(last.x-2, last.y-2, 25, 25)
             }
             else food = 0
             blocks.unshift(new_block)
             
             blocks.forEach( block => { 
                 ctx.fillStyle = 'black'
-                ctx.fillRect(block.x, block.y, 20, 20);
+                ctx.strokeStyle = 'green'
+                ctx.fillRect(block.x, block.y, 18, 18);
+                ctx.strokeRect(block.x, block.y, 18, 18)
             })
         }
 
-        function add(){
-            // blocks.push({})
-            // if (blocks.length == 1) blocks.push({})
-            // else blocks.push({})
-        }
 
         function add_food(){
-            // food_x = 140, food_y = 20
-            ctx.clearRect(food_x, food_y, 20, 20)
+            ctx.clearRect(food_x, food_y, 18, 18)
             food_x = Math.floor((Math.random() * can.width) / 20) * 20
             food_y = Math.floor((Math.random() * can.height) / 20) * 20
             ctx.fillStyle = 'green'
-            ctx.fillRect(food_x, food_y, 20, 20)
+            ctx.fillRect(food_x, food_y, 18, 18)
             
         }
         
         function change_dir(key){
-
-        }
-
-        document.addEventListener('keydown', (e) => {
-
-            switch(e.key){
+            switch(key){
                 case 'ArrowRight': {
                     if (!x_move){
                         y_move = 0;
                         x_move = 20;
                         break;
                     }
-                    else break;
+                    break;
                 }
                 
                 case 'ArrowLeft': {
@@ -115,7 +119,7 @@
                         x_move = -20
                         break;
                     }
-                    else break;
+                    break;
                 }
 
                 case 'ArrowUp': {
@@ -124,7 +128,7 @@
                         y_move = -20;
                         break;
                     }
-                    else break;
+                    break;
                 }
 
                 case 'ArrowDown': {
@@ -133,14 +137,16 @@
                         x_move = 0;
                         break;
                     }
-                    else break;
+                    break;
                 }
             }
-        })
+        }
+
+        document.addEventListener('keydown', (e) => {key_pressed = e.key})
 
         move()
         add_food()
-        setInterval(() => {check_food(); check_borders()}, 60)
+        setInterval(() => {check_food(); check_borders(); change_dir(key_pressed)}, 60)
 
     </script>
 </body>
