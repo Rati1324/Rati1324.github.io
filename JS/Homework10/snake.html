@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>snake</title>
+    <style>
+        #score{
+            width:20px;
+            margin:auto;
+            margin-bottom : -80px;
+            margin-top:120px;
+        }
+    </style>
 </head>
 <body>
+    <div id="score"></div>
     <canvas id='can' height="300" width="400" style='margin:auto; display:block;
         margin-top:13vh;'>
 
@@ -76,7 +85,7 @@
         }
 
         function move(){
-
+            document.getElementById('score').innerHTML = blocks.length
             var new_block = {x: blocks[0].x + x_move, y: blocks[0].y + y_move}
             if (!food){
                 var last = blocks.pop()
@@ -95,28 +104,51 @@
             })
         }
 
-
+        // food bug needs a fix
         function add_food(){
-            // food_x = can.width - 18,food_y = can.height - 18
-            var check = 0
-
+            var check = 1
+            console.log('start')
             ctx.clearRect(food_x, food_y, 20, 20)
-            while (!check){
+            while (1){
                 food_x = Math.floor((Math.random() * (can.width - 20)) / 20) * 20
                 food_y = Math.floor((Math.random() * (can.height - 20)) / 20) * 20
+                console.log(food_x, food_y)
                 for (let i=0; i < blocks.length; i++){
-                    console.log(check)
-                    if (blocks[i].x != food_x && blocks[i].y != food_y) {
-                        check = 1   
+                    
+                    if (blocks[i].x == food_x && blocks[i].y == food_y) {
+                        check = 0
                         break
                     }
                 }
+
+                if (check) {
+                    ctx.fillStyle = 'green'
+                    ctx.fillRect(food_x, food_y, 20, 20); 
+                    break;
+                }
+                check = 1
             }
-            if (check) {
-                console.log(check)
-                ctx.fillStyle = 'green'
-                ctx.fillRect(food_x, food_y, 20, 20)
-            }
+            // while (1){
+            //     food_x = Math.floor((Math.random() * (can.width - 20)) / 20) * 20
+            //     food_y = Math.floor((Math.random() * (can.height - 20)) / 20) * 20
+            //     console.log(food_x, food_y)
+            //     for (let i=0; i < blocks.length; i++){
+                    
+            //         if (blocks[i].x == food_x && blocks[i].y == food_y) {
+            //             check = 0
+            //             break
+            //         }
+            //     }
+
+            //     if (check) {
+            //         ctx.fillStyle = 'green'
+            //         ctx.fillRect(food_x, food_y, 20, 20); 
+            //         break;
+            //     }
+            //     check = 1
+            // }
+
+           
             
         }
         
