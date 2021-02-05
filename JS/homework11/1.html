@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <canvas height="200" width="300">
+
+    </canvas>
+    
+    <script>
+        var canvas = document.querySelector('canvas');
+        var ctx = canvas.getContext('2d');
+
+        ctx.beginPath();
+        ctx.arc(75,75,45,0,Math.PI*2,true); 
+               
+        ctx.moveTo(105,75);
+        ctx.arc(75,75,30,0,Math.PI,false);   
+               
+        ctx.moveTo(64,65);
+        ctx.arc(61,65,4,0,Math.PI*2,true); 
+               
+        ctx.moveTo(95,65);
+        ctx.arc(92,65,4,0,Math.PI*2,true); 
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(222,75,45,0, Math.PI*2, true);
+        ctx.stroke()
+
+        ctx.beginPath()
+        ctx.arc(205,65,4,0, Math.PI*2, true)
+        ctx.moveTo(244,66)
+        ctx.arc(240,65,4,0, Math.PI*2, true)
+        
+        ctx.moveTo(237,95)
+        ctx.arc(222,95,15,0, Math.PI, true)
+        ctx.stroke()
+    </script>
+    
+</body>
+</html>
